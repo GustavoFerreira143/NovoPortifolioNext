@@ -1,26 +1,154 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*::-webkit-scrollbar
+{
+  width: 10px;
+  border-radius: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+*::-webkit-scrollbar-thumb
+{
+  background-color: #0C0D0E;
+  border-radius: 10px;
+}
+
+.chatBot
+{
+  border-radius: 100%;
+}
+
+.ChatImg
+{
+  border-radius: 100%;
+}
+
+.botaoChat
+{
+  border-radius: 100%;
+}
+
+.balaocliente
+{
+  border-radius: 15px;
+  border-top-right-radius:0px;
+  max-width: 40%;
+  margin: 10px;
+  padding: 10px;
+}
+
+.balaoresposta
+{
+  padding: 10px;
+  margin: 10px;
+  max-width: 60%;
+  border-radius: 15px;
+  border-top-left-radius:0px ;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.7s ease-in-out;
+}
+
+.animate-fadeInDown {
+  transform: translateY(-200px);
+  animation: fadeInDown 0.7s ease-in-out;
+}
+
+
+.darkText {
+  color: white;
+}
+
+.darkBackground {
+  background-color: #000000;
+  animation: fadeInBlack 1s ease-out forwards;
+}
+
+.darkBackgroundAlt {
+  background-color: #0C0D0E;
+  transition: background-color 1s ease-in-out;
+}
+
+.darkButton {
+  border: #ECECEC solid 1px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.darkButton:hover {
+  background-color: #1e39d1;
+}
+
+.lightText {
+  color: black;
+}
+
+.lightBackground {
+  background-color: #eae9e9;
+  animation: fadeInWhite 1s ease-out forwards;
+}
+
+.lightBackgroundAlt {
+  background-color: #dbdada;
+  transition: background-color 1s ease-in-out;
+}
+
+.lightButton {
+
+  border: #0C0D0E solid 1px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.lightButton:hover {
+
+  background-color: #58c2ff;
+}
+
+
+
+@keyframes fadeInBlack {
+  from {
+    background-color: #EEF0F2;
+  }
+
+  to {
+    background-color: #000000;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes fadeInWhite {
+  from {
+    background-color: #000000;
+  }
+
+  to {
+    background-color: #EEF0F2;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
