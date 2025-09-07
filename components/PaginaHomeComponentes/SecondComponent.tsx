@@ -30,7 +30,7 @@ function SecondComponent() {
                         viewport={{ once: false, amount: 0 }}
                         className='h-[100%] md:h-auto  lg:col-span-6 col-span-12 flex justify-center items-center mb-5  md:mt-10 lg:mt-0'>
                         <div className='md:text-start'>
-                            <h1 className='mx-2 mx-10 text-lg md:text-2xl mt-5 md:mt-7'>
+                            <h1 className=' mx-10 text-lg md:text-2xl mt-5 md:mt-7'>
                                 Negócio sendo deixado para trás? Buscando Inovação? Quer elevar sua competitividade no mercado? Pois então encontrou a pessoa certa!
                             </h1>
                             <p className='mx-3 md:mx-10 text-sm md:text-lg mt-5 md:mt-6 indent-10 ml-5'>

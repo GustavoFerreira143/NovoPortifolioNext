@@ -6,12 +6,17 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import { DadosIA } from './DadosIA';
 
+interface MensagemChat {
+  tipo: "cliente" | "bot";
+  texto: string;
+}
+
 function Chat() {
     const { isDark } = useTheme();
     const [modal, setModal] = useState(false);
     const [mensagem, setMensagem] = useState("");
-    const [historicoChat, setHistoricoChat] = useState([]);
-    const scrollRef = useRef(null);
+    const [historicoChat, setHistoricoChat] = useState<MensagemChat[]>([]);
+    const scrollRef = useRef<HTMLDivElement | null>(null);
     const { obterResposta } = DadosIA();
 
     function ConversaIa() {

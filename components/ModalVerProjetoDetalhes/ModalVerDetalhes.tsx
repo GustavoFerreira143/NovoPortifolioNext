@@ -5,7 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from 'react';
 import { Objetos } from "../PaginaHomeComponentes/ObjetosProjetos/Objetos"
 
-export default function ModalVerDetalhes({ isOpen, onClose, data }) {
+interface ModalVerDetalhesProps {
+  isOpen: boolean;
+  onClose: () => void;
+  data: any; 
+}
+
+export default function ModalVerDetalhes({ isOpen, onClose, data }: ModalVerDetalhesProps) {
 
     const [current, setCurrent] = useState(0);
     const { isDark } = useTheme();

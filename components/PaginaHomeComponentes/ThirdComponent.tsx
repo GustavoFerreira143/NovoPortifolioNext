@@ -6,6 +6,18 @@ import { Objetos } from "./ObjetosProjetos/Objetos"
 import { useState, useEffect } from 'react';
 import ModalVerDetalhes from '../ModalVerProjetoDetalhes/ModalVerDetalhes';
 
+type Projeto = {
+    Titulo: string;
+    Img: string;
+    Texto: string;
+    Texto2?: string;   // opcional
+    Link1: string;
+    Link2?: string;
+    Link3?: string;
+    Link4?: string;
+};
+
+
 const images = [
     "/ProjetosIMG/ProjetoFuriaGG/HomeClientes.png",
     "/ProjetosIMG/ProjetoFuriaGG/AtualizacaoDeNoticias.png",
@@ -22,20 +34,20 @@ const images = [
     "/ProjetosIMG/ProjetoFuriaGG/VerificacaoDePesquisaDeUsers.png",
 ];
 
-
 function ThirdComponent() {
 
     const [current, setCurrent] = useState(0);
     const { isDark } = useTheme();
     const { projetos, setProjetos } = Objetos();
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedData, setSelectedData] = useState(null);
+    const [selectedData, setSelectedData] = useState<Projeto | null>(null);
 
-    function openModal(item) {
-        setSelectedData(item);
-        setIsModalOpen(true);
-    };
-
+    function openModal(item: Projeto) {
+    setSelectedData(item);
+    setIsModalOpen(true);
+    document.body.style.overflow = "hidden";
+    }
+    
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrent((prev) => (prev + 1) % images.length);

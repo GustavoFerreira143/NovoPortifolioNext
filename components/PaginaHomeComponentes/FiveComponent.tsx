@@ -25,7 +25,7 @@ function FiveComponent() {
                         <div className={` col-span-12 lg:col-span-6 ml-5 p-5 rounded-lg `}>
                             <h1 className='  text-lg md:text-3xl'>Me Envie um Email:</h1>
                             <h1 className='mt-5 lg:mt-10 text-lg md:text-1xl'>Digite a mensagem desejada abaixo e me clique no botão <br/> para me enviar de forma automatica.</h1>
-                            <textarea placeholder='Digite Sua Mensagem' className={`${isDark ? 'border-b border-solid border-white placeholder-white' : 'border-b border-solid border-black placeholder-black'} w-[100%]  md:mr-15 h-30 block text-lg mt-10`} value={TextoEmail} onInput={(e) => setTextoEmail(e.target.value)}/>
+                            <textarea placeholder='Digite Sua Mensagem' className={`${isDark ? 'border-b border-solid border-white placeholder-white' : 'border-b border-solid border-black placeholder-black'} w-[100%]  md:mr-15 h-30 block text-lg mt-10`} value={TextoEmail} onInput={(e) => setTextoEmail(e.currentTarget.value)}/>
                             <button className={`${isDark ? 'darkButton' : 'lightButton'} rounded-lg block w-[100%] h-15 mt-10 cursor-pointer`} 
                             onClick={() => {window.location.href = `mailto:gustavo.feneita1@gmail.com?subject=Contato%20via%20Site&body=${TextoEmail}`}}> Enviar</button>
                         </div>
